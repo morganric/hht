@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   rolify
+  after_create :default_role
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -9,5 +10,13 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+
+  has_many :projects
+  has_many :option_cards, :through => :user
+
+  private
+  def default_role
+    self.roles = Role.where(:name => :user)
+  end
   
 end

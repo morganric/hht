@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928144416) do
+ActiveRecord::Schema.define(:version => 20130928151605) do
+
+  create_table "option_cards", :force => true do |t|
+    t.boolean  "key_partners"
+    t.boolean  "key_activities"
+    t.boolean  "key_resources"
+    t.boolean  "value_proposition"
+    t.boolean  "customer_relationships"
+    t.boolean  "customer_channels"
+    t.boolean  "customer_segments"
+    t.boolean  "revenue_streams"
+    t.boolean  "cost_structure"
+    t.text     "option"
+    t.boolean  "tested"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"

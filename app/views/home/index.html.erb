@@ -1,4 +1,7 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<h1>Welcome to HHT</h1>
+<%# @projects.each do |project| %>
+  <!-- <p>Project: <%#= project.name %>	</p> -->
+<%# end %>
+
+<h2><%= pluralize(@projects.length, 'project' ) %></h2>
+<h2><%= pluralize(@option_cards.length, 'option card' ) %></h2>

@@ -1,0 +1,79 @@
+<%= simple_form_for(@option_card) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :project, :collection => current_user.projects, include_blank: false %>
+  <div class="hht-canvas text-center">
+    <div class="row">
+      <div class="span12">
+        
+        <div class="span2 offset1">
+          <div class="bordered double">
+            <%= f.input :key_partners %>
+          </div>
+        </div>
+        
+        <div class="span2 ">
+          <div class="bordered">
+            <%= f.input :key_activities %>
+          </div>
+          <div class="">
+            <div class="bordered">
+              <%= f.input :key_resources %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="span2 ">
+          <div class="bordered double">
+          <%= f.input :value_proposition %>
+          </div>
+        </div>
+        
+        <div class="span2">
+          <div class="bordered">
+            <%= f.input :customer_relationships %>
+          </div>
+          <div class="bordered">
+            <%= f.input :customer_channels %>
+          </div>
+        </div>
+        
+        <div class="span2">
+          <div class="bordered double">
+            <%= f.input :customer_segments %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span12 ">
+        <div class="span5 offset1">
+          <div class="bordered">
+            <%= f.input :revenue_streams %>
+          </div>
+        </div>
+        <div class="span5 ">
+          <div class="bordered">
+            <%= f.input :cost_structure %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- CANVAS -->
+
+  <div class="row">
+     <div class="span12">
+        <%= f.input :option, :input_html => {:cols => 50, :rows => 5} %>
+    </div>
+  </div>
+    <%= f.input :tested %>
+    <%= f.input :user_id, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

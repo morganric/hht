@@ -1,16 +1,22 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
-*/
+// Example using 'Cosmo' bootswatch
+//
+// First import journal variables
+@import "bootswatch/cosmo/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 60px; }
+
+// Responsive styles go here in case you want them
+@import "bootstrap-responsive";
+
+// And finally bootswatch style itself
+@import "bootswatch/cosmo/bootswatch";
+
+// Whatever application styles you have go last
+// @import "base";
 
 .content {
   background-color: #eee;
@@ -22,4 +28,105 @@
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+.hht-canvas {
+	background-color: white;
+	margin: 5px;
+	border: 1px black solid;
+	padding: 10px;
+}
+
+.nudge {
+	padding-left: 0px;
+}
+
+.bordered {
+	border: 1px solid black;
+	padding: 5px;
+	margin: 5px;
+	height: 150px;
+}
+
+.double {
+	height: 315px;	
+}
+
+div.dot {
+	background:black;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	color: transparent;
+	margin:20px;
+}
+
+.hht-canvas-border-bottom {
+	border-bottom: 1px solid black;
+}
+
+.hht-canvas-border-right {
+	border-right: 1px solid black;
+}
+
+.hht-canvas-border-left {
+	border-left: 1px solid black;
+	/*padding-left: 10px;*/
+}
+
+input[type=checkbox] {
+	/*visibility: hidden;*/
+	text-align: center;
+	margin: 0 auto;
+}
+
+/**
+ * Checkbox Four
+ */
+.checkboxFour {
+	width: 40px;
+	height: 40px;
+	background: #ddd;
+	margin: 20px 90px;
+	border-radius: 100%;
+	position: relative;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+/**
+ * Create the checked state
+ */
+.checkboxFour input[type=checkbox]:checked + label {
+	background: #26ca28;
+}
+
+/**
+ * Create the checkbox button
+ */
+.checkboxFour label {
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 100px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+	background: #333;
+	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+textarea {
+	width:100% !important;
 }

@@ -1,0 +1,104 @@
+
+<div class="hht-canvas text-center ndge">
+  <div class="row">
+    <div class="span11 offset1" >
+
+    <div class="span2 offset1 bordered double">
+      <b>Key partners:</b>
+      <% if @option_card.key_partners %>
+        <div class="dot">true</div>
+      <% end %>
+    </div>  
+
+    <div class="span2">
+      <div class="bordered">
+      <b>Key activities:</b>
+      <% if @option_card.key_activities %>
+        <div class="dot"></div>
+      <% end %>
+      </div>
+      <div class="bordered">
+      <b>Key resources:</b>
+      <% if @option_card.key_activities %>
+        <div class="dot"></div>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="span2 bordered double">
+      <b>Value proposition:</b>
+      <% if @option_card.value_proposition %>
+        <div class="dot"></div>
+      <% end %>
+    </div>
+
+    <div class="span2">
+      <div class="bordered">
+      <b>Customer relationships:</b>
+      <% if @option_card.customer_relationships %><div class="dot">true</div><% end %>
+      </div>
+      <div class="bordered">
+        <b>Customer channels:</b>
+      <% if @option_card.customer_channels %><div class="dot"></div><% end %>
+      </div>
+    </div>
+
+    <div class="span2 bordered double">
+      <b>Customer segments:</b>
+      <% if @option_card.customer_segments %><div class="dot"></div><% end %>
+    </div>
+  </div>
+
+  </div>
+
+    <div class="row">
+        <div class="span11 offset1">
+          <div class="span5 offset1 bordered">
+          <b>Revenue streams:</b>
+          <% if @option_card.revenue_streams %><div class="dot"></div><% end %>
+          </div>
+
+          <div class="span5 bordered">
+          <b>Cost structure:</b>
+          <% if @option_card.cost_structure %><div class="dot"></div><% end %>
+        </div>
+      </div>
+    </div>
+
+</div><!-- canvas -->
+
+<div class="row">
+  <div class="span12">
+    <p class='well'>
+      <b>Option:</b>
+      <%= @option_card.option %>
+    </p>
+  </div>
+</div>
+
+<p>
+  <% if @option_card.tested %>
+  <p>Tested</p>
+  <% else %>
+  <p>Not Tested</p>
+  <% end %>
+</p>
+
+<p>
+  <b>By:</b>
+  <%= @option_card.user.name %>
+</p>
+
+<p>
+  <b>For:</b>
+  <%= @option_card.project.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_option_card_path(@option_card) %> |
+<%= link_to 'Back', option_cards_path %>
+
+
+<script type="text/javascript">
+
+</script>

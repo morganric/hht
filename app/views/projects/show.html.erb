@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @project.name %> <small> by <%= @project.user.name %></small>
+</h1>
+  <hr/>
+
+<ol>
+
+<% @project.option_cards.each do |card| %>
+  <li>
+  <span class="pull-right">
+  	<% if card.tested == true %>
+  		<span class="badge label-success">Tested</span>
+  	<% else %>
+  	<span class="badge label-warning">Not Tested</span>
+  	<% end %>
+  </span>
+  <h3><%= link_to truncate(card.option), option_card_path(card) %></h3>
+  <% if card.key_partners == true %>
+  	<span class="badge">Key Partners</span>
+  <% end %>
+  <% if card.key_activities == true %>
+  	<span class="badge">Key Activities</span>
+  <% end %>
+  <% if card.key_resources == true %>
+  	<span class="badge">Key Resources</span>
+  <% end %>
+  <% if card.value_proposition == true %>
+  	<span class="badge">Value Proposition</span>
+  <% end %>
+  <% if card.customer_relationships == true %>
+  	<span class="badge">Customer Relationships</span>
+  <% end %>
+  <% if card.customer_channels == true %>
+  	<span class="badge">Customer Channels</span>
+  <% end %>
+  <% if card.customer_segments == true %>
+  	<span class="badge">Customer Segments</span>
+  <% end %>
+  <% if card.cost_structure == true %>
+  	<span class="badge">Cost Structure</span>
+  <% end %>
+  <% if card.revenue_streams == true %>
+  	<span class="badge">Revenue Streams</span>
+  <% end %>
+	</li>
+
+  <hr/>
+<% end %>
+
+</ol>
+
+<%= link_to 'Create New Option Card', new_option_card_path, :class => "btn btn-large pull-right btn-success" %>
+<br/>
+<br/>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

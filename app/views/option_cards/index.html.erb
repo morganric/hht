@@ -1,0 +1,47 @@
+<h1>Listing option_cards</h1>
+
+<table>
+  <tr>
+    <th>Key partners</th>
+    <th>Key activities</th>
+    <th>Key resources</th>
+    <th>Value proposition</th>
+    <th>Customer relationships</th>
+    <th>Customer channels</th>
+    <th>Customer segments</th>
+    <th>Revenue streams</th>
+    <th>Cost structure</th>
+    <th>Option</th>
+    <th>Tested</th>
+    <th>User</th>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @option_cards.each do |option_card| %>
+  <tr>
+    <td><%= option_card.key_partners %></td>
+    <td><%= option_card.key_activities %></td>
+    <td><%= option_card.key_resources %></td>
+    <td><%= option_card.value_proposition %></td>
+    <td><%= option_card.customer_relationships %></td>
+    <td><%= option_card.customer_channels %></td>
+    <td><%= option_card.customer_segments %></td>
+    <td><%= option_card.revenue_streams %></td>
+    <td><%= option_card.cost_structure %></td>
+    <td><%= option_card.option %></td>
+    <td><%= option_card.tested %></td>
+    <td><%= option_card.user_id %></td>
+    <td><%= option_card.project_id %></td>
+    <td><%= link_to 'Show', option_card %></td>
+    <td><%= link_to 'Edit', edit_option_card_path(option_card) %></td>
+    <td><%= link_to 'Destroy', option_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Option card', new_option_card_path %>
